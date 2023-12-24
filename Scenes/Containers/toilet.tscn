@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp7ibmvndahbp"]
+
+[ext_resource type="PackedScene" uid="uid://kpge177my0vy" path="res://Scenes/Containers/item_container.tscn" id="1_r0xk7"]
+[ext_resource type="Texture2D" uid="uid://rqwjt6eydguw" path="res://resources/graphics/objects/toilet.png" id="2_02m0c"]
+[ext_resource type="Script" path="res://Scenes/Containers/toilet.gd" id="2_pr5qe"]
+[ext_resource type="Texture2D" uid="uid://cqt2gj2yhty83" path="res://resources/graphics/objects/lid.png" id="4_du3qr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_od3pb"]
+radius = 104.019
+
+[node name="Toilet" instance=ExtResource("1_r0xk7")]
+script = ExtResource("2_pr5qe")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_od3pb")
+
+[node name="BaseSprite" parent="." index="1"]
+texture = ExtResource("2_02m0c")
+
+[node name="LidSprite" parent="." index="2"]
+position = Vector2(0, 27)
+texture = ExtResource("4_du3qr")
+
+[node name="SpawnPosition" type="Node2D" parent="." index="3"]
+
+[node name="Marker2D" type="Marker2D" parent="SpawnPosition" index="0"]
+position = Vector2(0, 60)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPosition" index="1"]
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPosition" index="2"]
+position = Vector2(0, -30)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPosition" index="3"]
+position = Vector2(60, 0)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnPosition" index="4"]
+position = Vector2(-60, 0)
